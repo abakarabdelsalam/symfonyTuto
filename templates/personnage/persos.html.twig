@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% block title %}Personnage
+{% endblock %}
+
+
+{% block monTitle %}
+	Liste des personnages
+{% endblock %}
+
+{% block body %}
+
+
+	<table class="table">
+		<thead class=" bg-dark text-danger">
+			<tr>
+				<th scope="col">Image</th>
+				<th scope="col">Nom</th>
+				<th scope="col">Age</th>
+				<th scope="col">Sexe</th>
+				<th scope="col">Force</th>
+				<th scope="col">Agilité</th>
+				<th scope="col">Intelligence</th>
+			</tr>
+		</thead>
+
+		{% for MonTab in MonTabs %}
+			<tr>
+				<td scope="row">
+					<img src="{{asset('images/personnages/' ~ MonTab.nom ~ '.png')}}"></td>
+				<td>
+					<a href="{{path('afficPers', {'nom':MonTab.nom|lower})}}">
+
+
+						{{MonTab.nom}}</a>
+				</td>
+				<td>
+					{{MonTab.age}}
+				</td>
+				<td>
+					{% if MonTab.sexe %}
+
+						Homme
+
+					{% else %}
+						Femme
+
+					{% endif %}
+
+				</td>
+				<td>
+					{{MonTab.carac.force}}
+				</td>
+				<td>
+					{{MonTab.carac.agi}}
+				</td>
+				<td>
+					{{MonTab.carac.intel}}
+				</td>
+			</tr>
+		{% endfor %}
+
+	</th>
+</tr>{% endblock %}

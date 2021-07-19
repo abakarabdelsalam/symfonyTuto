@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Armes
+{% endblock %}
+
+{% block monTitle %}Armes
+
+	{{tables.nom}}
+
+{% endblock %}
+
+{% block body %}
+	<table class="table">
+		<tr>
+			<td scope="row">
+				<img src="{{asset('images/armes/' ~ tables.nom ~ '.png')}}"></td>
+
+
+			<td>
+				{{tables.nom}}</td>
+
+
+		</tr>
+	</a>
+</td>
+<td>
+	{% if tables.mark %}
+
+
+		VAL
+	{% else %}
+		No VAl
+
+	{% endif %}
+
+</td>
+
+
+<div col-sm-9>
+
+	<h3>Caracteristiques</h3>
+
+
+</div></tr></table>{% endblock %}
